@@ -1,7 +1,7 @@
 {
     "name": "qxprint/sdk",
     "description": "The QxPrint PHP SDK is a library designed to facilitate the integration and use of QxPrint's printing services in PHP applications.",
-    "type": "project",
+    "type": "library",
     "autoload": {
         "psr-4": {
             "Qxprint\\Sdk\\": "src/"
