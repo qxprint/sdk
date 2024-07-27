@@ -18,31 +18,36 @@ class Client
 
     public function getPrintJobList()
     {
-        return $this->request->send('GET', '/printjobs');
+        return $this->request->send('GET', '/auth/v1/print');
     }
 
+    /**
+     * @param $data ['printer_id' => {printer_id}, 'job_title' => 'example', 'content' => 'pdf_string_base_64']
+     * @return Response
+     * @throws \Exception
+     */
     public function sendPrintJob($data)
     {
-        return $this->request->send('POST', '/printjobs', $data);
+        return $this->request->send('POST', '/auth/v1/print', $data);
     }
 
     public function getPrintersList()
     {
-        return $this->request->send('GET', '/printers');
+        return $this->request->send('GET', '/auth/v1/printer');
     }
 
     public function getPrintersFromDevice($deviceId)
     {
-        return $this->request->send('GET', "/devices/{$deviceId}/printers");
+        return $this->request->send('GET', "/auth/v1/printer?device_id={$deviceId}");
     }
 
     public function getPrinter($deviceId, $printerId)
     {
-        return $this->request->send('GET', "/devices/{$deviceId}/printers/{$printerId}");
+        return $this->request->send('GET', "/auth/v1/printer/?device_id={$deviceId}&printer_id={$printerId}");
     }
 
     public function getDeviceList()
     {
-        return $this->request->send('GET', '/devices');
+        return $this->request->send('GET', '/auth/v1/device');
     }
 }
