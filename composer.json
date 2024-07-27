@@ -4,7 +4,7 @@
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Qxprint\\Sdk\\": "src/"
+            "QxPrint\\Sdk\\": "src/"
         }
     },
     "minimum-stability": "stable",
